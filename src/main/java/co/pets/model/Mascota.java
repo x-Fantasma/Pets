@@ -24,8 +24,8 @@ public class Mascota implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column(name = "nroMicrochip", nullable = false, length = 100)
-	private String nroMicrochip;
+	@Column(name = "nroChip", nullable = false, length = 100)
+	private String nroChip;
 	@Column(name = "nombre", nullable = false, length = 50)
 	private String nombre;
 	@Column(name = "especie", nullable = false, length = 20)
@@ -46,15 +46,19 @@ public class Mascota implements Serializable{
 	private String personalidad;
 	@Column (name = "estado", nullable = false, length = 50)
 	private String estado;
+	@Column (name = "fechaIngreso")
+	private Date fechaIngreso;
 	
 	@Transient
-	private float meses;
+	private float edad;
 	
-	public Mascota() {}
+	public Mascota() {
+		this.fechaIngreso = new Date();
+	}
 
 	@Autowired
-	public Mascota(String nombre, String especie, float peso, String raza, String color, String sexo,
-			Date fechaNacimiento, String senasParticulares, String personalidad, String estado, float meses) {
+	public Mascota(String nombre, String especie, float peso, String raza, String color, String sexo, 
+			String senasParticulares, String personalidad, String estado, float edad) {
 		super();
 		this.nombre = nombre;
 		this.especie = especie;
@@ -65,14 +69,22 @@ public class Mascota implements Serializable{
 		this.senasParticulares = senasParticulares;
 		this.personalidad = personalidad;
 		this.estado = estado;
-		this.meses = meses;
+		this.edad = edad;
 	}
 	
-	public String getNroMicrochip() {
-		return nroMicrochip;
+	public Date getFechaIngreso() {
+		return fechaIngreso;
 	}
-	public void setNroMicrochip(String nroMicrochip) {
-		this.nroMicrochip = nroMicrochip;
+
+	public void setFechaIngreso(Date fechaIngreso) {
+		this.fechaIngreso = fechaIngreso;
+	}
+
+	public String getNroChip() {
+		return nroChip;
+	}
+	public void setNroChip(String nroChip) {
+		this.nroChip = nroChip;
 	}
 	public String getNombre() {
 		return nombre;
@@ -138,7 +150,7 @@ public class Mascota implements Serializable{
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	public float getMeses() {
-		return meses;
+	public float getEdad() {
+		return edad;
 	}	
 }

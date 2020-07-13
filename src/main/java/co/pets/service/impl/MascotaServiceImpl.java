@@ -18,9 +18,9 @@ public class MascotaServiceImpl implements MascotaService{
 
 	@Override
 	public void save(Mascota mascota) throws MascotaExceptions {
-		if(getById(mascota.getNroMicrochip()) == null) {
+		if(getById(mascota.getNroChip()) == null) {
 			try {
-				mascota.setfechaNacimiento(mascota.getMeses());
+				mascota.setfechaNacimiento(mascota.getEdad());
 				mascotaRepository.save(mascota);
 			} catch (MascotaExceptions e) {
 				throw new MascotaExceptions(ExceptionsMessages.MENSAJE_EDAD_MASCOTA);
@@ -33,9 +33,9 @@ public class MascotaServiceImpl implements MascotaService{
 
 	@Override
 	public void update(Mascota mascota) throws MascotaExceptions {
-		if(getById(mascota.getNroMicrochip()) != null) {
+		if(getById(mascota.getNroChip()) != null) {
 			try {
-				mascota.setfechaNacimiento(mascota.getMeses());
+				mascota.setfechaNacimiento(mascota.getEdad());
 				mascotaRepository.save(mascota);
 			} catch (MascotaExceptions e) {
 				throw new MascotaExceptions(ExceptionsMessages.MENSAJE_EDAD_MASCOTA);

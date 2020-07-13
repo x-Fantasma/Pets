@@ -18,7 +18,7 @@ public class MascotaController {
 	@Autowired
 	private MascotaService mascotaService;
 	
-	@PostMapping("/saveMascota")
+	@PostMapping("/savemascota")
 	public void saveMascota(@RequestBody Mascota mascota) throws Exception {
 		mascotaService.save(mascota);
 	}
