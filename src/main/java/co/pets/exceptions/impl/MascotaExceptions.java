@@ -1,13 +1,17 @@
 package co.pets.exceptions.impl;
 
-public class MascotaExceptions extends Exception{
+import co.pets.exceptions.config.BadRequestException;
+
+public class MascotaExceptions extends BadRequestException{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public MascotaExceptions(String mensaje) {
-		super(mensaje);
+	public MascotaExceptions(String detail) {
+		super(detail);
 	}
+
+	
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import antlr.collections.List;
 import co.pets.exceptions.ExceptionsMessages;
+import co.pets.exceptions.config.BadRequestException;
 import co.pets.exceptions.impl.MascotaExceptions;
 import co.pets.model.Mascota;
 import co.pets.repository.MascotaRepository;

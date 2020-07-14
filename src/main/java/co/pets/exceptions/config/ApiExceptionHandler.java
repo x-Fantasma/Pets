@@ -18,6 +18,7 @@ public class ApiExceptionHandler {
 		return new ErrorMessage(exception, request.getRequestURI());
 	}
 	
+	
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler({BadRequestException.class,
 					   org.springframework.dao.DuplicateKeyException.class,
